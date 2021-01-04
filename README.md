@@ -14,3 +14,4 @@ Hourglass gimmick for VRChat.
 ## Use Asset
  - VRCSDK3-WORLD-2020.12.09.04.44_Public.unitypackage
  - UdonSharp_v0.19.0.unitypackage
+ - CrystalShader
