@@ -12,7 +12,8 @@ namespace KabotyaWorks
         public string OnEvent;                             // イベント呼び出し名
         public UdonBehaviour Target_UdonBehaviour;         // イベント送信先
 
-        private const bool OUT_LEVEL_DEBUG = true;         // デバッグレベルのログ出力
+        private const bool DEF_OUTLEVEL_DEBUG = true;         // デバッグレベルのログ出力
+        private const bool DEF_OUTLEVEL_TRACE = true;         // トレースレベルのログ出力
 
         // 基本処理 ------------------------------------------------------------
         // 開始処理
@@ -40,13 +41,17 @@ namespace KabotyaWorks
             {
                 Debug.LogError(string.Format("[<color=cyan>U#</color>][<color=red><b>Critical</b></color>]: {0}", format ));
             }
-            else if((level == "DEBUG") && OUT_LEVEL_DEBUG == true)
+            else if((level == "DEBUG") && DEF_OUTLEVEL_DEBUG == true)
             {
                 Debug.Log(string.Format("[<color=cyan>U#</color>][<color=yellow>Debug</color>]: {0}", format ));
             }
             else if(level == "NOTICE")
             {
                 Debug.Log(string.Format("[<color=cyan>U#</color>][<color=magenta>Notice</color>]: {0}", format ));
+            }
+            else if((level == "TRACE") && DEF_OUTLEVEL_TRACE == true)
+            {
+                Debug.Log(string.Format("[<color=cyan>U#</color>][<color=blue>Trace</color>]: {0}", format ));
             }
             else if(level == "SUCCESS")
             {
